@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hyf-W1-FIp">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--News Table View Controller-->
+        <scene sceneID="3Ws-2W-9Q9">
+            <objects>
+                <tableViewController id="Hyf-W1-FIp" customClass="NewsTableViewController" customModule="NewPearlHacksApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="121" sectionHeaderHeight="28" sectionFooterHeight="28" id="brc-XY-4dd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="121" id="r4V-Ll-CDz" customClass="ViewControllerTableViewCell" customModule="NewPearlHacksApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="121"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" tableViewCell="r4V-Ll-CDz" id="ZOU-1Q-gMu">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zbi-Fr-DNe">
+                                            <rect key="frame" x="21" y="14" width="333" height="88.5"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="zbi-Fr-DNe" secondAttribute="bottom" constant="10" id="8cN-7i-ga3"/>
+                                        <constraint firstItem="zbi-Fr-DNe" firstAttribute="top" secondItem="ZOU-1Q-gMu" secondAttribute="topMargin" constant="6" id="YWd-ZT-XMK"/>
+                                        <constraint firstItem="zbi-Fr-DNe" firstAttribute="leading" secondItem="ZOU-1Q-gMu" secondAttribute="leadingMargin" constant="13" id="kQf-zy-gD6"/>
+                                        <constraint firstItem="zbi-Fr-DNe" firstAttribute="centerX" secondItem="ZOU-1Q-gMu" secondAttribute="centerX" id="pFz-LN-jpi"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="myImage" destination="zbi-Fr-DNe" id="WF7-cO-LRi"/>
+                                    <segue destination="6Qd-0v-oOJ" kind="show" identifier="newsSites" id="Gpd-c1-trR"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Hyf-W1-FIp" id="1Qf-bh-UUT"/>
+                            <outlet property="delegate" destination="Hyf-W1-FIp" id="3R0-tC-Mc2"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QvL-6n-LLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7.2000000000000002" y="15.742128935532236"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Aw5-CG-6Ji">
+            <objects>
+                <viewController id="6Qd-0v-oOJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VA7-oK-OhP"/>
+                        <viewControllerLayoutGuide type="bottom" id="zDp-ge-8oG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cCX-Ja-yFc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="45L-dM-aIH">
+                                <rect key="frame" x="0.0" y="79" width="375" height="588"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d5H-mO-AfL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="News" id="TMi-cz-fH3">
+                                        <barButtonItem key="backBarButtonItem" title="Back" id="kGg-ON-Zqe"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="gyF-cP-ats">
+                                            <connections>
+                                                <segue destination="Hyf-W1-FIp" kind="show" id="PTC-eO-6eL"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZAb-7o-g6a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="805.60000000000002" y="-3.1484257871064472"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+</document>
